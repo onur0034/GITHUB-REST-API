@@ -5,6 +5,7 @@ const inputName = document.getElementById("githubname");
 const lastUsers = document.getElementById("last-users");
 const clearLastUsers = document.getElementById("clear-last-users");
 const github = new Github();
+const ui = new UI();
 
 // neat functions
 
@@ -27,14 +28,15 @@ githubDataFunc = (e) => {
       .getGithubData(username)
       .then((response) => {
         if (response.user.message === "Not Found") {
-          console.log("wrong username");
+          ui.showAlert("wrong user name!");
         } else {
-          console.log(response);
+          ui.showUserInfo(response.user);
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => ui.showAlert("enter a user name"));
   }
 
+  ui.clearInput();
   e.preventDefault();
 };
 
