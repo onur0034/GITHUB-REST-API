@@ -1,40 +1,45 @@
- //selecting elements
+//selecting elements
 
- const githubForm = document.getElementById("github-form");
- const nameInput = document.getElementById("githubname");
- const clearLastUsers = document.getElementById("clear-last-users");
- const lastUsers = document.getElementById("last-users");
- const github = new Github();
+const githubFormData = document.getElementById("github-form");
+const inputName = document.getElementById("githubname");
+const lastUsers = document.getElementById("last-users");
+const clearLastUsers = document.getElementById("clear-last-users");
+const github = new Github();
 
- eventListeners = () => {
-   githubForm.addEventListener("submit", getData);
-   clearLastUsers.addEventListener("click", clearAllSearched);
-   document.addEventListener("DOMContentLoaded", getAllSearched);
- };
+// neat functions
 
- getData = (e) => {
-   let username = nameInput.value.trim();
-   if (username === "") {
-     alert("enter a user name");
-   } else {
-     github
-       .getGithubData(username)
-       .then((response) => {
-           if (response.user.message === "Not Found") {
-               console.log("wrong username");
+eventListeners = () => {
+  githubFormData.addEventListener("submit", githubDataFunc);
+  clearLastUsers.addEventListener("click", clearFunc);
+  document.addEventListener("DOMContentLoaded", getAllSearched);
+};
 
-           }
-           else console.log(response);
-       })
-       .catch((err) => console.error("error"));
-   }
+//functions
 
-   e.preventDefault();
- };
+githubDataFunc = (e) => {
+  let username = inputName.value.trim();
+  console.log(username);
 
- clearAllSearched = () => {};
+  if (username === "") {
+    console.log("enter a user name");
+  } else {
+    github
+      .getGithubData(username)
+      .then((response) => {
+        if (response.user.message === "Not Found") {
+          console.log("wrong username");
+        } else {
+          console.log(response);
+        }
+      })
+      .catch((err) => console.log(err));
+  }
 
- getAllSearched = () => {};
+  e.preventDefault();
+};
 
- eventListeners();
+clearFunc = () => {};
 
+getAllSearched = () => {};
+
+eventListeners();
