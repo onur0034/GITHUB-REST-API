@@ -1,5 +1,3 @@
-
-
 class Github {
   constructor() {
     this.url = "https://api.github.com/users/";
@@ -18,6 +16,5 @@ class Github {
     };
   }
 }
-
 
 // note: its necessary to remember : await  on fetch and getting json data...

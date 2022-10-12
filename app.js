@@ -31,6 +31,7 @@ githubDataFunc = (e) => {
           ui.showAlert("wrong user name!");
         } else {
           ui.showUserInfo(response.user);
+          ui.showRepoInfo(response.repo);
         }
       })
       .catch((err) => ui.showAlert("enter a user name"));
