@@ -18,7 +18,7 @@ class UI {
                     <div class="row">
                       <div class="col-md-4">
                         <a href="" target = "_blank">
-                         <img class="img-fluid mb-2" src="${user.avatar_url}"> </a>
+                         <img class="img-fluid mb-2 avatar" src="${user.avatar_url}"> </a>
                          <hr>
                          <div id="fullName"><strong> ${user.name}</strong></div>
                          <hr>
@@ -68,10 +68,12 @@ class UI {
   }
 
   showRepoInfo(repos) {
+    this.repoDiv.innerHTML = "";
     repos.forEach((repo) => {
-      this.repoDiv.innerHTML += `
+        
+        this.repoDiv.innerHTML += `
       
-      <div class="mb-2 card-body">
+      <div class="mb-2 card-body repoClass">
                     <div class="row">
                         <div class="col-md-2">
                         <span></span> 
@@ -92,6 +94,7 @@ class UI {
                 </div>
       
       `;
+      
     });
   }
 }
