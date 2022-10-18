@@ -18,13 +18,17 @@ body {
   min-height: 100vh;
 }
 
+
+
+
 h3 {
   color: aliceblue;
   text-align: center;
 }
 
-a {
-  text-decoration: none;
+.badges {
+  
+  margin-left: 200px;
 }
 
 .card-body {
@@ -36,10 +40,10 @@ a {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+  
 }
 
 .repoClass {
-  text-decoration: none;
   background-color: #fbceb1;
 }
 
@@ -50,3 +54,7 @@ a {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
+
+
+

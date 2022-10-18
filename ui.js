@@ -14,7 +14,7 @@ class UI {
   showUserInfo(user) {
     this.profileDiv.innerHTML = `
 
-        <div class="card card-body mb-3">
+        <div class="card card-body mb-3 GradientBorder">
                     <div class="row">
                       <div class="col-md-4">
                         <a href="" target = "_blank">
@@ -74,12 +74,12 @@ class UI {
         this.repoDiv.innerHTML += `
       
       <div class="mb-2 card-body repoClass">
-                    <div class="row">
+                    <div class="row" style="display: flex; ">
                         <div class="col-md-2">
-                        <span></span> 
-                        <a href="${repo.html_url}" target = "_blank" id = "repoName">${repo.name}</a>
+                        <span><a href="${repo.html_url}" target = "_blank" id = "repoName">${repo.name}</a></span> 
+                        
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 badges" style= "justify-self: end">
                             <button class="btn btn-secondary">
                                 Starlar  <span class="badge badge-light" id="repoStar">${repo.stargazers_count}</span>
                             </button>
