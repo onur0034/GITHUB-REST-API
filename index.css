@@ -18,30 +18,31 @@ body {
   min-height: 100vh;
 }
 
-
-
-
 h3 {
   color: aliceblue;
   text-align: center;
 }
 
 .badges {
-  
   margin-left: 200px;
 }
 
 .card-body {
-  background-color: #9e1b32;
+  background-color: #000000;
+  justify-content: center;
+  text-align: center;
   margin: 20px 150px 0px 150px;
   border: solid;
   border-radius: 30px;
+  overflow: hidden;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
-  
+  position: relative;
+  z-index: 100;
 }
+
 
 .repoClass {
   background-color: #fbceb1;
@@ -55,6 +56,27 @@ h3 {
   -o-border-radius: 50%;
 }
 
+.lead {
+  color: aliceblue;
+}
 
-
-
+.buton {
+  margin-top: 10px;
+  text-decoration: none;
+  border: 2px solid #ff4c55;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 1s;
+  position: relative;
+  box-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 8px rgb(0, 247, 255),
+      0 0 12px rgb(0, 247, 255),
+      0 0 14px rgb(0, 247, 255),
+      0 0 16px rgb(0, 247, 255),
+      0 0 18px rgb(0, 247, 255);
+  
+}
