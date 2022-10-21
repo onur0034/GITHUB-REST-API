@@ -1,31 +1,21 @@
 class Storage {
-
-    static getSearchedUsersFromStorage() {
-        //get all users
-
-        let users; 
-        if (localStorage.getItem("searched") === null) {
-            users = [];
-        }
-        else {
-            users = JSON.parse(localStorage.getItem("searched"));
-        }
-
-        return users;
+  static getSearchedUSersFromStorage() {
+    let users;
+    if (localStorage.getItem("searched") === null) {
+      users = [];
+    } else {
+      users = JSON.parse(localStorage.getItem("searched"));
     }
-
-    static addSearchedUserToStorage() {
-        // adding users
-        
-
+    return users;
+  }
+  static addSearchedUserToStorage(username) {
+    let users = this.getSearchedUSersFromStorage();
+    if (users.indexOf(username) === -1) {
+      users.push(username);
     }
-
-    static clearAllSearchedUsersFromStorage() {
-        //clear users from storage
-    }
-
-
-
-
-
+    localStorage.setItem("searched", JSON.stringify(users));
+  }
+  static clearAllSearchedUsersFromStorage() {
+    localStorage.removeItem("searched");
+  }
 }

@@ -30,6 +30,9 @@ githubDataFunc = (e) => {
         if (response.user.message === "Not Found") {
           ui.showAlert("wrong user name!");
         } else {
+          ui.addSearchedUserToUI(username);
+          Storage.addSearchedUserToStorage(username);
+          // we stated Storage class at html above the app.js, so we can use it*******
           ui.showUserInfo(response.user);
           ui.showRepoInfo(response.repo);
         }
@@ -41,8 +44,24 @@ githubDataFunc = (e) => {
   e.preventDefault();
 };
 
-clearFunc = () => {};
+clearFunc = () => {
 
-getAllSearched = () => {};
+  if (confirm("emin misiniz?")) {
+    Storage.clearAllSearchedUsersFromStorage();
+    ui.clearAllSearchedFromUI();
+  }
+};
+
+getAllSearched = () => {
+  let users = Storage.getSearchedUSersFromStorage();
+  let result = "";
+
+  users.forEach((user) => {
+    result += `
+    <li class="list-group-item">${user}</li>
+    `;
+  });
+  lastUsers.innerHTML = result;
+};
 
 eventListeners();

@@ -70,8 +70,7 @@ class UI {
   showRepoInfo(repos) {
     this.repoDiv.innerHTML = "";
     repos.forEach((repo) => {
-        
-        this.repoDiv.innerHTML += `
+      this.repoDiv.innerHTML += `
       
       <div class="mb-2 card-body repoClass">
                     <div class="row" style="display: flex; ">
@@ -94,7 +93,21 @@ class UI {
                 </div>
       
       `;
-      
     });
+  }
+  addSearchedUserToUI(username) {
+    let users = Storage.getSearchedUSersFromStorage();
+    if (users.indexOf(username) === -1) {
+      //<li class="list-group-item">asdaskdjkasjkşdjşasjd</li>;
+      const li = document.createElement("li");
+      li.className = "list-group-item";
+      li.textContent = username;
+      this.lastUsers.appendChild(li);
+    }
+  }
+  clearAllSearchedFromUI() {
+    while (this.lastUsers.firstElementChild !== null) {
+      this.lastUsers.removeChild(this.lastUsers.firstElementChild);
+    }
   }
 }
