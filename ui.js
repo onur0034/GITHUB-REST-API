@@ -35,7 +35,7 @@ class UI {
                                 Repolar  <span class="badge badge-light">${user.repos_url}</span>
                             </button>
                             <hr>
-                            <li class="list-group">
+                            
                                 <li class="list-group-item borderzero">
                                     <img src="images/company.png" width="30px"> <span id="company">${user.company}</span>
 
@@ -48,6 +48,7 @@ class UI {
                                     <img src="images/mail.png" width="30px"> <span id="company">${user.email}</span>
 
                                 </li>
+                                
 
                             </div>
 

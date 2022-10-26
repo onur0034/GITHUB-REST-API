@@ -29,6 +29,7 @@ h3 {
 
 .card-body {
   background-color: #000000;
+  color: white;
   justify-content: center;
   text-align: center;
   margin: 20px 150px 0px 150px;
@@ -40,12 +41,34 @@ h3 {
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
   position: relative;
-  z-index: 100;
+  box-shadow:
+      0 0 2px #fff,
+   
+      0 0 8px rgb(0, 247, 255),
+      0 0 12px rgb(0, 247, 255),
+      0 0 14px rgb(0, 247, 255),
+      0 0 16px rgb(0, 247, 255),
+      0 0 18px rgb(0, 247, 255);
+  
+}
+.list-group-item{
+  background-color: #ffffff;
+  color: black;
+  
+}
+.list-group{
+  background-color: #000000;
+  border: solid;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
 }
 
 
 .repoClass {
-  background-color: #fbceb1;
+  background-color: #000000;
 }
 
 .avatar {
